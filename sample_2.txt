@@ -1,0 +1,26 @@
+HTML:
+<a href="#" class="favmod[favmod={news-id}] active[/favmod]" data-id="{news-id}"></a>
+
+
+
+CSS:
+.favmod {
+	display: block;
+	margin: 0 auto;
+	width: 24px;
+	height: 24px;
+	opacity: .7;
+	background: rgba(0,0,0,.35) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAOCAYAAAAbvf3sAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAASRJREFUeNpi/P//PwNFAGiAABBvBeJ9QCxJUMPv3797/0PBnz9/5gIpRnymh/79+/cbTMO/f/9+AqlEZDWMQAEZIB0LxG5AtjEjIyMvmiHfgGLngcxdQLyEAWjtqf9EAqDtl5k+f/78j9gA+fr1KwOztLT0F319fUcWFhYuAoHxaeXKlU0gNu/Bgwc7gR78i8c1/06dOjUNqFaACUh8vnfv3safP3++xWP6x0ePHm0CMj+ANDDY2dn9BIYEzvAGyRkaGv4EsZmgJrAzMTGx4NHAAgwhThAbrOjAgQMPhYSEbvLy8io9efLkxM6dO/f/+vXrr5eXl4OcnJzVjx8/np84ceIOWDPUEJBGLSDmBmKQX16B4gyIxYBYGIh/APE1IP4FEGAARUrhqT8VFhQAAAAASUVORK5CYII=) no-repeat 50% 50%;
+	border-radius: 50%;
+	transition: opacity .2s;
+}
+	.favmod:hover,
+	.favmod.active {
+		opacity: 1;
+	}
+	.favmod.active {
+		background-color: #f90;
+	}
+	.favmod.active:hover {
+		opacity: .7;
+	}

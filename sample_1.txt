@@ -1,0 +1,44 @@
+HTML:
+				<a href="#" class="favmod[favmod={news-id}] active[/favmod]" data-id="{news-id}">
+					<span class="favmod-add" title="Добавить в закладки"></span>
+					<span class="favmod-unset" title="Удалить из закладок"></span>
+				</a>
+
+
+CSS:
+.favmod {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	display: block;
+	margin: 0 auto;
+	width: 16px;
+	height: 16px;
+	padding: 4px;
+	opacity: .5;
+}
+.favmod.active,
+.favmod:hover {
+	opacity: 1;
+}
+.favmod.active:hover{
+	opacity: .7;
+}
+	.favmod-add,
+	.favmod-unset {
+		display: block;
+		width: 100%;
+		height: 100%;
+		background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAgCAYAAAAbifjMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAYNJREFUeNrslM8rRFEUx9973iC/KVGSBX8E2TBvN2p2yo6d/AMWJEpKibVs2NmysJxG2bG2tqBEGIkJwzyfozO585o3PYZSnPr0bvfce96559z7tePxeNKyrEXogkM4gWrrw3y4hCfogQHYhLVUKpV3GaxCH9zCAhyBaxXbFPTCPCzBCrTCrKsDsRzcE9XX8bt5nufwGYVB2ICMumbwZcT5rBN2iT+LyZoHyOpxYoZv2gmc9bVEAJlvhHoNljN8tvnHKlmkKduB+XXYgStoMXwvZoA22IazwFEkgwt4BOlYv5meuVDO2KntDJptBMsWsi0EkKKcQgKu1VnOpE5NsAvtrhbmBo61hVHsnFpJPToco1A1ETfL3Yhp9r5jVWjfEkAeTj7kEpUrpOyJSYA7aAi5xmEmNauTi2TznMf0OR9oN6K0sRmGYdntnqvN6uVIflIPJreG9n5AD4hapAcT+yOheoDvN+qBpvxn9UBbGEkPqNXX9YDN/3pg6sF4OlGRHrwJMADPaJXvw5WmBQAAAABJRU5ErkJggg==) no-repeat 0 0;
+	}
+	.favmod-unset {
+		background-position: 0 -16px;
+	}
+
+	.favmod .favmod-unset,
+	.favmod.active .favmod-add {
+		display: none;
+	}
+	.favmod.active .favmod-unset {
+		display: block;
+	}

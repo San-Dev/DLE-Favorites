@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dleplugin>
+	<name>DLE-Favorites</name>
+	<description>Закладки для пользователей и гостей</description>
+	<icon></icon>
+	<version></version>
+	<dleversion></dleversion>
+	<versioncompare>less</versioncompare>
+	<upgradeurl></upgradeurl>
+	<filedelete>0</filedelete>
+	<mysqlinstall><![CDATA[]]></mysqlinstall>
+	<mysqlupgrade><![CDATA[]]></mysqlupgrade>
+	<mysqlenable><![CDATA[]]></mysqlenable>
+	<mysqldisable><![CDATA[]]></mysqldisable>
+	<mysqldelete><![CDATA[]]></mysqldelete>
+	<file name="engine/engine.php">
+		<operation action="after">
+			<searchcode><![CDATA[switch ( $do ) {]]></searchcode>
+			<replacecode><![CDATA[	case "favorites" :
+		$config['allow_cache'] = false;
+		include (DLEPlugins::Check(ENGINE_DIR . '/modules/favorites.php'));
+		break;]]></replacecode>
+		</operation>
+	</file>
+	<file name="engine/modules/favorites.php">
+		<operation action="after">
+			<searchcode><![CDATA[$order_list = array();]]></searchcode>
+			<replacecode><![CDATA[require_once ENGINE_DIR . '/mods/favorites/class.favorites.php';
+$favmod = new Sandev\Favorites;
+$list = $favmod->getList();]]></replacecode>
+		</operation>
+	</file>
+	<file name="engine/modules/main.php">
+		<operation action="before">
+			<searchcode><![CDATA[echo $tpl->result['main'];]]></searchcode>
+			<replacecode><![CDATA[include_once ROOT_DIR . '/engine/mods/favorites/index.php';]]></replacecode>
+		</operation>
+	</file>
+</dleplugin>
