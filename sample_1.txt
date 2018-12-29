@@ -1,8 +1,8 @@
 HTML:
-				<a href="#" class="favmod[favmod={news-id}] active[/favmod]" data-id="{news-id}">
-					<span class="favmod-add" title="Добавить в закладки"></span>
-					<span class="favmod-unset" title="Удалить из закладок"></span>
-				</a>
+<a href="#" class="favmod[favmod={news-id}] active[/favmod]" data-id="{news-id}">
+	<span class="favmod-add" title="Добавить в закладки"></span>
+	<span class="favmod-unset" title="Удалить из закладок"></span>
+</a>
 
 
 CSS:
