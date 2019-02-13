@@ -4,6 +4,7 @@
  *
  * @link https://sandev.pro/
  * @author Sander <oleg.sandev@gmail.com>
+ * @version 1.0.1
  */
 
 namespace Sandev;
@@ -78,7 +79,7 @@ class Favorites
 		if ($is_logged) {
 			$db->query("UPDATE ".USERPREFIX."_users SET favorites = '$list' WHERE user_id = {$member_id['user_id']}");
 		} else {
-			set_cookie('dle_favorites', $list, false);
+			set_cookie('dle_favorites', $list, 366);
 		}
 	}
 
