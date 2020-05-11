@@ -22,6 +22,12 @@
 		break;]]></replacecode>
 		</operation>
 	</file>
+	<file name="engine/init.php">
+		<operation action="replace">
+			<searchcode><![CDATA[} else $tpl->set( '{favorite-count}', '0' );]]></searchcode>
+			<replacecode><![CDATA[} else $tpl->set( '{favorite-count}', count(explode(",", $_COOKIE['dle_favorites'])) );]]></replacecode>
+		</operation>
+	</file>
 	<file name="engine/modules/favorites.php">
 		<operation action="after">
 			<searchcode><![CDATA[$order_list = array();]]></searchcode>
