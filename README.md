@@ -29,11 +29,11 @@
 
 Найти строку:
 
-`} else $tpl->set( '{favorite-count}', '0' );`
+`$tpl->set( '{favorite-count}', '0' );`
 
 Заменить на:
 
-`} else $tpl->set( '{favorite-count}', count(explode(",", $_COOKIE['dle_favorites'])) );`
+`$tpl->set( '{favorite-count}', count(explode(",", $_COOKIE['dle_favorites'])) );`
 
 
 - Открыть файл **engine/modules/favorites.php**
