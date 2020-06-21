@@ -25,7 +25,7 @@
 	<file name="engine/init.php">
 		<operation action="replace">
 			<searchcode><![CDATA[$tpl->set( '{favorite-count}', '0' );]]></searchcode>
-			<replacecode><![CDATA[$tpl->set( '{favorite-count}', count(explode(",", $_COOKIE['dle_favorites'])) );]]></replacecode>
+			<replacecode><![CDATA[$tpl->set( '{favorite-count}', $_COOKIE['dle_favorites'] ? count(explode(",", $_COOKIE['dle_favorites'])) : 0);]]></replacecode>
 		</operation>
 	</file>
 	<file name="engine/modules/favorites.php">
