@@ -1,7 +1,7 @@
 $(document).on('click', '.favmod', function(e){
 	e.preventDefault();
 	var $this = $(this);
-	ShowLoading();
+	ShowLoading('');
 	$.ajax({
 		url: dle_root + 'engine/mods/favorites/ajax.php',
 		type: 'POST',
